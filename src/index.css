@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #2b2118;
+  background: #f8f3eb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f8f3eb;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ================================
+   AKWAABA TABLE ADMIN DASHBOARD
+================================ */
+
+.admin-page {
+  min-height: 100vh;
+  background: #f8f5f0;
+  color: #24201d;
+  font-family: inherit;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 6%;
+  background: #ffffff;
+  border-bottom: 1px solid #e8e1d9;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #24201d;
+  color: #ffffff;
+}
+
+.admin-eyebrow {
+  margin: 0 0 3px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #9a7654;
+}
+
+.admin-brand h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.refresh-button {
+  border: none;
+  background: #24201d;
+  color: #ffffff;
+  padding: 11px 17px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.refresh-button:hover {
+  background: #3a332e;
+  transform: translateY(-1px);
+}
+
+.refresh-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spin {
+  animation: admin-spin 0.8s linear infinite;
+}
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-content {
+  width: min(1180px, 88%);
+  margin: 0 auto;
+  padding: 55px 0 80px;
+}
+
+.dashboard-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.section-label {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #9a7654;
+}
+
+.dashboard-heading h2 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.reservation-count {
+  background: #ffffff;
+  border: 1px solid #e8e1d9;
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #665b53;
+}
+
+.reservation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.reservation-card {
+  background: #ffffff;
+  border: 1px solid #e8e1d9;
+  border-radius: 20px;
+  padding: 23px;
+  box-shadow: 0 8px 25px rgba(45, 35, 28, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reservation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(45, 35, 28, 0.09);
+}
+
+.reservation-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.status-badge {
+  background: #fff4df;
+  color: #9a6727;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.reservation-id {
+  color: #a49a92;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reservation-date {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee8e2;
+}
+
+.reservation-date svg {
+  color: #9a7654;
+  flex-shrink: 0;
+}
+
+.reservation-date span,
+.detail-item span,
+.request-box span {
+  display: block;
+  color: #9b9189;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.reservation-date strong {
+  display: block;
+  font-size: 15px;
+}
+
+.reservation-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.detail-item svg {
+  color: #9a7654;
+  flex-shrink: 0;
+}
+
+.detail-item strong {
+  font-size: 14px;
+}
+
+.request-box {
+  background: #faf8f5;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.request-box p {
+  margin: 0;
+  color: #4f4842;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.admin-message {
+  background: #ffffff;
+  border: 1px solid #e8e1d9;
+  border-radius: 18px;
+  padding: 35px;
+  text-align: center;
+  color: #746a63;
+}
+
+.admin-message.error {
+  color: #a33c32;
+  background: #fff8f7;
+  border-color: #f0d3cf;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .reservation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-header {
+    padding: 20px 5%;
+  }
+
+  .admin-brand h1 {
+    font-size: 18px;
+  }
+
+  .admin-content {
+    width: 90%;
+    padding-top: 35px;
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .dashboard-heading h2 {
+    font-size: 28px;
+  }
+
+  .reservation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .refresh-button {
+    padding: 10px;
+  }
+
+  .refresh-button {
+    font-size: 0;
+  }
+
+  .refresh-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
